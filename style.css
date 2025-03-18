@@ -1,63 +1,108 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 450px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.434);
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+button {
+  border: none;
+  background-color: black;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: all 0.8s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+  color: #ff00bb;
+}
+
+button[name="delete"]{
+    background-color: inherit;
+    color: black;
+}
+
+button[name="delete"]:hover{
+    color: red;
+}
+
+button[name="check"]{
+  background-color: inherit;
+  color: black;
+}
+
+
+
+
+button[name="check"]:hover{
+color: chartreuse;
+}
+
+
+
+
+ul{
+    list-style: none;
     padding: 0;
     margin: 0;
+
 }
 
-html{
-    height: 100%;
-}
-
-body{
+.todo-list-item{
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
-.container{
-    max-width: 450px;
-    width: 100%;
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 6px;
-    background-color: rgb(139, 204, 247);
+.todo-item{
+    border-radius: 4px;
 }
 
-h1{
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-form{
-    display: flex;
-    width:100% ;
-    gap: 10px;
-    
-}
-
-input{
-    flex: 1;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.434);
-    background-color: aqua;
-}
-
-button{
-    border: none;
-    background-color: black;
-    color: #ffffff;
-    border-radius: 5px;
-    padding: 5px 10px;
-    transition: all 0.8s;
-    cursor: pointer;
-
-}
-
-button:hover{
-    background-color: black;
-    color: #ff00bb;
+.todo-list-item.completed .todo-item{
+  color: greenyellow;
+  text-decoration: line-through;
 }
