@@ -61,48 +61,41 @@ button:hover {
   color: #ff00bb;
 }
 
-button[name="delete"]{
-    background-color: inherit;
-    color: black;
-}
-
-button[name="delete"]:hover{
-    color: red;
-}
-
-button[name="check"]{
+button[name="delete"] {
   background-color: inherit;
   color: black;
 }
 
-
-
-
-button[name="check"]:hover{
-color: chartreuse;
+button[name="delete"]:hover {
+  color: red;
 }
 
-
-
-
-ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
+button[name="check"] {
+  background-color: inherit;
+  color: black;
 }
 
-.todo-list-item{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+button[name="check"]:hover {
+  color: chartreuse;
 }
 
-.todo-item{
-    border-radius: 4px;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.todo-list-item.completed .todo-item{
+.todo-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-item {
+  border-radius: 4px;
+}
+
+.todo-list-item.completed .todo-item {
   color: greenyellow;
   text-decoration: line-through;
 }

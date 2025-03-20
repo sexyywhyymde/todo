@@ -50,7 +50,7 @@ function updateTodoStatus(todoText, isCompleted) {
   localStorage.setItem("todos", JSON.stringify(updatedTodos));
 }
 
-function removeToLocalStorage(text) {
+function removeFromLocalStorage(text) {
   if (!text) return;
   const todos = JSON.parse(localStorage.getItem("todos")) || [];
   const updatedTodos = todos.filter((todo) => {
@@ -61,17 +61,21 @@ function removeToLocalStorage(text) {
 
 function handleSubmit(e) {
   e.preventDefault();
-  if (input.value !== "") {
-    addNewTodo(input.value);
+  if (input.value.trim() !== "") {
+    addNewTodo(input.value.trim());
+    input.value = ""
   }
 }
 
-function addNewTodo(text) {
+function addNewTodo(text,completed=false) {
   const li = document.createElement("li");
   li.innerHTML = `<span class="todo-item">${text}</span>
                   <div> <button name="check"><i class="fa-solid fa-check"></i></button>
                    <button name="delete"><i class="fa-solid fa-trash"></i></button></div>`;
   li.classList.add("todo-list-item");
+  if(completed){
+  li.classList.add("completed")
+  }
   list.appendChild(li);
   saveToLocalStorage();
 }
@@ -82,7 +86,7 @@ function deleteButtonClick(e) {
   if (todoItem) {
     todoItem.remove();
     const todo = todoItem.querySelector(".todo-item");
-    removeToLocalStorage(todo.textContent);
+    removeFromLocalStorage(todo.textContent);
     console.log(todo.textContent);
   }
 }
